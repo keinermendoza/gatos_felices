@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --paragraph--font: 'Belgrano', serif;
+    --title--font:'Comfortaa', cursive;
+    --title--align:center;
+    --title--size:3rem;
+    --paragraph--size: 1.5rem;
+}
+.btn, .paragraph, li {
+    font-family: var(--paragraph--font);
+    line-height: 2rem;
+    font-size: var(--paragraph--size);
+}
+li {
+    padding: 0.4rem 0;
+}
+.btn-primary {
+    background-color:rgb(7, 7, 150);
+    border-color: rgb(7, 7, 150);
+}
+.paragraph {
+    line-height: 2rem;
+    font-size: var(--paragraph--size);
+}
+
+.paragraph__btn{
+    width:fit-content;
+    display:block;
+    margin: 2rem auto 0;
+}
+
+.title {
+    font-size: var(--title--size);
+    font-family: var(--title--font);
+    text-align: var(--title--align);
+}
+
+
+/* este es para el primer bloque con imagen */
+.hero {
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    
+    font-size: 4rem;
+
+    /* no usa clase container */
+    /* por eso requiere dar el mismo el padding */
+    padding: 2rem 3rem;
+
+
+    background-image: linear-gradient(rgba(192, 98, 11, 0.84), rgba(0, 0, 235, 0.719)), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height:30rem;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.hero__title {
+    margin-right: 3rem;
+}
+
+body {
+    color:white;
+}
+
+.main {
+    padding-top: 4rem;
+    background-color: #171105;
+}
+
+/* IMPORTANTE */
+.container {
+    width:95%;
+    max-width: 1450px;
+    overflow: hidden;
+}
+
+.galery {
+    display:flex;
+    padding: 3rem 0;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 0.5rem;  
+}
+
+.galery__card {
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color:  rgba(225, 238, 241, 0.719);
+    color:black;
+
+    /* min width siempre prevalece sobre el width */
+    min-width:10rem;
+    width:15%;
+}
+
+/* con el display block puedo determinarle un tamaño */
+/* el unico height determinado es el del image_container */
+.image__container {
+
+    display:flex;
+    width:100%;
+    border-radius: inherit;
+    max-height: 15rem; 
+    height: 20vh;
+    
+    justify-content:center;
+    align-items:center;
+}
+
+/* con el calc puedo aumentar el width de la img junto con la screen */
+.card__image {
+    overflow:hidden;
+    border-radius: inherit;
+    height: 100%;
+    width: calc(10rem/10vw);
+    object-fit:cover;
+    object-position: center;
+}
+
+.galery__card--footer {
+    margin-top: 0.6rem;
+    width:100%;
+    text-align: center;
+}
+
+@media (max-width:600px) {
+    .galery {
+        justify-content: space-arround;
+    }
+    .galery__card {
+        width:44%;
+    }
+}
+
+/* ANUNCIO 1 */
+.container__anuncio__1 {
+    background-image: url("wave.svg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: rgb(7, 7, 150);
+}
+
+.anuncio__1 {
+    padding: 4rem 0 3rem 0;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    /* grid-auto-rows: 250px;  determina el alto de cada row, finalmente no lo utilice*/
+
+    grid-template-areas:
+    "title title image image"
+    "paragraps paragraps image image"
+    "beneficios beneficios  beneficios beneficios";
+}
+
+.anuncio__1--title {
+    grid-area: title;
+}
+
+.anuncio__1--paragraphs {
+    grid-area: paragraps;
+    padding-top: 2rem;
+}
+
+.anuncio__1--image--container{
+    grid-area: image;
+    max-height:380px;
+    margin: 0 auto;
+}
+
+/* anuncio__1--image comparte container con anuncio__1--btn */
+.anuncio__1--image{
+    height: 90%;
+    max-height:360px;
+}
+.anuncio__1--beneficios {
+    margin-top: 2rem;
+    grid-area: beneficios;
+
+}
+
+
+/* ANUNCIO 2 */
+
+
+.container__anuncio__2 {
+    padding: 4rem 0;
+    background-image: linear-gradient(rgba(192, 98, 11, 0.84), rgba(0, 0, 235, 0.819)), url('back_cat2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position-y: top;
+    min-height:25rem;
+    width: 100%;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* no usa clase container */
+    /* por eso requiere dar el mismo el padding */
+    padding: 2rem 3rem;
+}
+
+.anuncio__2--body{
+    margin: 2rem auto 0 auto;
+    max-width:700px;
+
+}
+
+/* WHATASPP */
+
+.whatsapp__container {
+    padding:0 0 4rem 0;
+}
+
+.whatsapp {
+    display:flex;
+    
+}
+.whatsapp__header {
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    z-index:0;
+
+}
+.whatsapp__header--text {
+    z-index:1;
+}
+.whatsapp__header--image {
+
+    /* cambia para pantallas pequeñas */
+    width: 22rem;
+
+    /* centrado */
+    display:block;
+    margin: 0 auto;
+}
+
+
+@media (max-width:740px) {
+    .whatsapp__container {
+        padding: 4rem 0;
+    }
+    .whatsapp__header {
+        flex-direction: column;
+    }
+    .whatsapp__header--image {
+        max-width: 30rem;
+        width:80%;
+        margin: -3.5rem auto;
+    }
+
+    .hero {
+         flex-direction: column;
+         justify-content:space-between;
+         align-items: center;
+    }
+
+    .hero__title {
+        margin: 0;
+        min-width:auto;
+    }
+
+    .container__anuncio__2{
+        min-height:40rem;
+    }
+    
+    /* ESTE ES IMPORTANTE */
+    .anuncio__1 {
+        grid-template-columns:repeat(2, 1fr);        
+        grid-template-areas:
+        "title title"
+        "paragraps paragraps"
+        "image image"
+        "beneficios beneficios";
+    }
+    .anuncio__1--beneficios {
+        margin-top: 6rem;
+    }
+}
