@@ -249,6 +249,11 @@ body {
 
 
 @media (max-width:740px) {
+    :root {
+        --paragraph--size: 1.2rem;
+        --title--size:2.5rem;
+    }
+
     .whatsapp__container {
         padding: 4rem 0;
     }
