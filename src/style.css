@@ -43,6 +43,7 @@ li {
 
 /* este es para el primer bloque con imagen */
 .hero {
+    overflow:hidden;
     display:flex;
     flex-direction: column;
     justify-content:space-between;
@@ -72,7 +73,7 @@ body {
 }
 
 .main {
-    padding-top: 4rem;
+    /* padding-top: 4rem; */
     background-color: #171105;
 }
 
@@ -83,9 +84,16 @@ body {
     overflow: hidden;
 }
 
+.galery__container {
+    padding: 3rem 0;
+}
+
+.galery__container--title {
+    padding-bottom: 0.5rem;
+}
+
 .galery {
     display:flex;
-    padding: 3rem 0;
     flex-wrap: wrap;
     justify-content:center;
     gap: 0.5rem;  
